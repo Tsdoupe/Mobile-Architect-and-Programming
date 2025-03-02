@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".InventoryActivity">
+
+    <!-- Inventory Title -->
+    <TextView
+        android:id="@+id/inventoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inventory_list"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Headers -->
+    <LinearLayout
+        android:id="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/inventoryTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <!-- Header Item Name -->
+        <TextView
+            android:id="@+id/headerItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/item_name"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <!-- Header SKU -->
+        <TextView
+            android:id="@+id/headerSKU"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sku"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <!-- Header Category -->
+        <TextView
+            android:id="@+id/headerCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/category"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <!-- Header Quantity -->
+        <TextView
+            android:id="@+id/headerQuantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/quantity"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <!-- Header Edit -->
+        <TextView
+            android:id="@+id/headerEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="@string/edit"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <!-- Header Delete -->
+        <TextView
+            android:id="@+id/headerDelete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="@string/delete"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Recycler View -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/headers"
+        app:layout_constraintBottom_toTopOf="@id/addItemButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Add Item Button -->
+    <Button
+        android:id="@+id/addItemButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_item"
+        android:backgroundTint="#1976D2"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- SMS Settings Button -->
+    <ImageButton
+        android:id="@+id/smsSettingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/sms_settings"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="6dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

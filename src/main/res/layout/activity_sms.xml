@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SMSActivity">
+
+    <!-- Toolbar for Back Navigation -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/smsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/sms_notifications_title"
+        android:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- SMS Notification Title -->
+    <TextView
+        android:id="@+id/smsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sms_notifications_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/smsToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for SMS message display -->
+    <TextView
+        android:id="@+id/smsMessageTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/default_sms_message"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/smsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Toggle Switch to Enable/Disable SMS Notifications -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/smsToggleSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/enable_sms_notifications"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:minHeight="48dp"
+        android:minWidth="140dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/smsMessageTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
